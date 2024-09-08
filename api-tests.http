@@ -1,0 +1,155 @@
+### Health Check
+GET /api/v1/health
+Host: localhost:8080
+
+### Create a Unity Object
+POST /api/v1/unityObjects
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "5i",
+  "type": "5i",
+  "posX": -0.1,
+  "posY": 0.0,
+  "posZ": 3.2
+}
+
+### List All Unity Objects
+GET /api/v1/unityObjects
+Host: localhost:8080
+
+### Get a Unity Object by ID
+GET /api/v1/unityObjects/1
+Host: localhost:8080
+
+### Update a Unity Object by ID
+PUT /api/v1/unityObjects/1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "Helmet",
+  "type": "Head",
+  "posX": 10.0,
+  "posY": 20.0,
+  "posZ": 5.0
+}
+
+### Delete a Unity Object by ID
+DELETE /api/v1/unityObjects/4
+Host: localhost:8080
+
+### Create a Training
+POST /api/v1/training
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "New Joel Training",
+  "description": "Details about the training",
+  "unityObjectIds": [6, 7, 8, 9, 10]
+}
+
+### List All Trainings
+GET /api/v1/training
+Host: localhost:8080
+
+### Get a Training by ID
+GET /api/v1/training/1
+Host: localhost:8080
+
+### Update a Training by ID
+PUT /api/v1/training/3
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "New Joel Training - Only I",
+  "description": "New Joel Training - Only I",
+  "unityObjectIds": [6, 7, 8, 9, 10]
+}
+
+### Delete a Training by ID
+DELETE /api/v1/training/4
+Host: localhost:8080
+
+### Create a Session
+POST /api/v1/session
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "code": "ABC789",
+  "trainingId": 3
+}
+
+### List All Sessions
+GET /api/v1/session
+Host: localhost:8080
+
+### Get a Session by ID
+GET /api/v1/session/1
+Host: localhost:8080
+
+### Get a Session by Code
+GET /api/v1/session/code/ABC123
+Host: localhost:8080
+
+### Update a Session by ID
+PUT /api/v1/session/5
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "code": "SESSION12346",
+  "trainingId": 2
+}
+
+### Delete a Session by ID
+DELETE /api/v1/session/2
+Host: localhost:8080
+
+### Create an Activity
+POST /api/v1/activities
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "hold",
+  "posX": 10.0,
+  "posY": 20.0,
+  "posZ": 5.0,
+  "unityObjectId": 1,
+  "sessionId": 3
+}
+
+### List All Activities
+GET /api/v1/activities
+Host: localhost:8080
+
+### List All Activities By Session ID
+GET /api/v1/activities/session/3
+Host: localhost:8080
+
+### Get an Activity by ID
+GET /api/v1/activities/6
+Host: localhost:8080
+
+### Update an Activity by ID
+PUT /api/v1/activities/6
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "hold",
+  "posX": 15.0,
+  "posY": 25.0,
+  "posZ": 35.0,
+  "unityObjectId": 2,
+  "sessionId": 5
+}
+
+### Delete an Activity by ID
+DELETE /api/v1/activities/4
+Host: localhost:8080

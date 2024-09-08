@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model UnityObject {
+  id       Int        @id @default(autoincrement())
+  name     String
+  type     String
+  posX     Float
+  posY     Float
+  posZ     Float
+  Training Training[]
+  Activity Activity[]
+}
+
+model Training {
+  id           Int           @id @default(autoincrement())
+  name         String
+  description  String
+  createdAt    DateTime      @default(now())
+  unityObjects UnityObject[]
+  Session      Session[]
+}
+
+model Session {
+  id         Int        @id @default(autoincrement())
+  code       String     @unique
+  createdAt  DateTime   @default(now())
+  training   Training   @relation(fields: [trainingId], references: [id])
+  trainingId Int
+  Activity   Activity[]
+}
+
+model Activity {
+  id            Int         @id @default(autoincrement())
+  name          String
+  posX          Float
+  posY          Float
+  posZ          Float
+  createdAt     DateTime    @default(now())
+  unityObject   UnityObject @relation(fields: [unityObjectId], references: [id])
+  unityObjectId Int
+  session       Session     @relation(fields: [sessionId], references: [id])
+  sessionId     Int
+}
