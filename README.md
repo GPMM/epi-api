@@ -4,6 +4,37 @@
 
 This API provides endpoints for managing Unity Objects, Trainings, Sessions, and Activities. It supports CRUD operations for each entity, allowing you to create, read, update, and delete resources.
 
+## How to Run
+
+### Prerequisites
+Ensure you have **Docker** installed and running on your machine.
+
+### Steps
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start Docker containers:
+   ```bash
+   make compose-up
+   ```
+
+3. Generate Prisma client:
+   ```bash
+   make prisma-generate
+   ```
+
+4. Apply database migrations:
+   ```bash
+   make prisma-migrate
+   ```
+
+5. Run the development server:
+   ```bash
+   npm run start:dev
+   ```
+
 ## Base URL
 `<host>:<port>/api/v1/[...]`
 
