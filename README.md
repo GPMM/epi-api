@@ -6,6 +6,8 @@ This API provides endpoints for managing Unity Objects, Trainings, Sessions, and
 
 ## How to Run
 
+https://youtu.be/LUvat5mPQEk
+
 ### Prerequisites
 Ensure you have **Docker** installed and running on your machine.
 
